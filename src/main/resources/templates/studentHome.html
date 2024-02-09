@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT</title>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+<span th:if="${currentUser != null}">
+<img th:src="@{/downloadImage(picName=${currentUser.picName})}" width="100"><br>
+    <i th:text="${'Welcome ' + currentUser.name}"></i><br>
+    <a href="/logout">LOGOUT</a>
+</span>
+<table th:if="${lesson != null}">
+    <thead>
+    <tr>
+        <th>TITLE</th>
+        <th>DURATION</th>
+        <th>PRICE</th>
+        <th>START DATE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${lesson.title}"></td>
+        <td th:text="${lesson.duration}"></td>
+        <td th:text="${lesson.price}"></td>
+        <td th:text="${#dates.format(lesson.startDate, 'dd-MM-yyyy ')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="container" th:if="${currentUser.getLesson() == null}">
+    <table>
+        <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DURATION</th>
+            <th>PRICE</th>
+            <th>START DATE</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="lesson : ${lessons}">
+            <td th:text="${lesson.title}"></td>
+            <td th:text="${lesson.duration}"></td>
+            <td th:text="${lesson.price}"></td>
+            <td th:text="${#dates.format(lesson.startDate, 'dd-MM-yyyy ')}"></td>
+            <td>
+                <a th:href="@{'/student/lesson/add/' + ${lesson.id}}">ADD</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" th:if="${currentUser.getLesson() != null}">
+    <table>
+        <thead>
+        <tr>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>E-MAIL</th>
+            <th>MESSENGER</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}" th:if="${student.email != currentUser.getEmail()}">
+            <td>
+                <img th:src="@{/downloadImage(picName=${student.picName})}" width="50">
+            </td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.surname}"></td>
+            <td th:text="${student.email}"></td>
+            <td><a th:href="@{'/message/' + ${student.id}}">MESSENGER</a></td></tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

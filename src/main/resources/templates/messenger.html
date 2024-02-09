@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD LESSON</title>
+    <link rel="stylesheet" href="/css/lessonForm.css">
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        MESSAGE
+    </div>
+    <div class="underline"></div>
+    <label for="" th:each="message : ${messages}">
+        <i th:text="${message.text}"></i><br>
+    </label>
+    <br/>
+    <form action="/message/send" method="post">
+        <div class="form-row">
+            <div class="input-data textarea">
+                <input type="hidden" name="studentId" th:value="${studentId}">
+                <textarea rows="8" cols="80" name="text" required></textarea>
+                <br/>
+                <div class="underline"></div>
+                <label for="">Write your message</label>
+                <br/>
+                <div class="form-row submit-btn">
+                    <div class="input-data">
+                        <div class="inner"></div>
+                        <input type="submit" value="SEND">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

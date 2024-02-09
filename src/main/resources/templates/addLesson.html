@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD LESSON</title>
+    <link rel="stylesheet" href="/css/lessonForm.css">
+</head>
+<body>
+<div class="container">
+    <div class="text">
+        ADD LESSON
+    </div>
+    <form action="/teacher/lesson/add" method="post">
+        <div class="form-row">
+            <div class="input-data">
+                <input type="text" name="title" required>
+                <div class="underline"></div>
+                <label for="">TITLE</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="number" name="price" required>
+                <div class="underline"></div>
+                <label for="">PRICE</label>
+            </div>
+            <div class="input-data">
+                <label for="">START DATE</label><br>
+                <input type="date" name="startDate" required>
+            </div>
+
+            <div class="input-data">
+                <label for="">DURATION</label><br>
+                <input type="number" name="duration" min="1" max="5" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data textarea">
+                <div class="form-row submit-btn">
+                    <div class="input-data">
+                        <div class="inner"></div>
+                        <input type="submit" value="ADD">
+                    </div>
+                </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" href="/css/loginPage.css">
+
+</head>
+
+<body> <!-- partial:index.partial.html -->
+
+<section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span>
+
+    <div class="signin">
+
+        <div class="content">
+            <span th:if="${msg != null}" th:text="${msg}"></span>
+
+
+            <h2>REGISTER</h2>
+            <form action="/register" method="post" enctype="multipart/form-data">
+                <div class="form">
+                    <div class="inputBox">
+                        <input type="text" name="name" required> <i>NAME</i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="surname" required> <i>SURNAME</i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="email" required> <i>EMAIL</i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" name="password" required> <i>PASSWORD</i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="file" name="picture" required="">
+                    </div>
+
+                    <div class="inputBox">
+                        <select name="userType">
+                            <option value="TEACHER">TEACHER</option>
+                            <option value="STUDENT">STUDENT</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="submit" value="REGISTER">
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section> <!-- partial -->
+
+</body>
+
+</html>
